@@ -1,0 +1,11 @@
+public/
+
+# uncompiled scss
+*.scss
+*.css.map
+
+# node modules
+node_modules/
+
+# personal project files
+__ignore/

@@ -1,0 +1,71 @@
+nav {
+  display: inline-flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.navbar.note__add {
+  opacity: 0.2;
+  color: white;
+  width: 2em;
+  padding: 0 5px 0 5px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+}
+
+.navbar.note__add:hover {
+  opacity: 1;
+  background-color: rgb(28, 24, 37);
+}
+
+.list.navbar-items {
+  list-style: none;
+  height: 100%;
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.navbar-item {
+  height: 100%;
+  color: white;
+  padding: 0 5px 0 5px;
+  background-color: transparent;
+}
+
+.navbar-item button {
+  border: none;
+}
+
+.navbar-item.item--active {
+  opacity: 1;
+  font-weight: bold;
+  padding: 0 10px 0 10px;
+  background-color: rgb(15, 14, 18);
+  border-radius: 15px 15px 0 0;
+}
+
+.navbar-item.item--active > .navbar-item.note__close {
+  opacity: 1;
+}
+
+.navbar-item.item--inactive {
+  border-right: rgb(28, 24, 37) solid 2px;
+  border-radius: 5px 5px 0 0;
+}
+
+.navbar-item.item--inactive:hover {
+  background-color: rgb(28, 24, 37);
+}
+
+.navbar-item.note__close {
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0;
+}
+
+.navbar-item.note__close:hover {
+  opacity: 1;
+}/*# sourceMappingURL=Navbar.css.map */
