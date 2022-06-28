@@ -1,35 +1,21 @@
-import { INote } from '../Note'
-import '../Styles/Navbar.css'
+import React from 'react';
 
-interface INavbarItemProperties {
-    index: number;
-    note: INote;
-    onChangeNoteState(type: string, note:INote): void;
+export default class Navbar extends React.PureComponent {
+    #activeNotes = []
+
+    NavbarItem = () => {
+        return <div></div>
+    }
+
+    render () {
+        return <nav className='navbar'>
+            <button className='navbar inline-button'>R/W</button>
+            <ul className='active-notes'>
+                {this.#activeNotes.map((n, i) => <li key={i}>
+                    <this.NavbarItem/>
+                </li>)}
+            </ul>
+            <button className='navbar inline-button'>Add</button>
+        </nav>
+    }
 }
-
-function NavbarItem({ index, note, onChangeNoteState }: INavbarItemProperties) {
-    return <div className={`navbar-item${index === 0 ? ' item--active' : ' item--inactive'}`}>
-        <button className='navbar-item note__select' onClick={() => onChangeNoteState('add', note)}>{note.content.title || 'Untitled Note'}</button>
-        <button className='navbar-item note__close' onClick={() => onChangeNoteState('remove', note)}>X</button>
-    </div>
-}
-
-interface INavbarProperties {
-    activeNotes: INote[];
-    onAddNote(): void;
-    onChangeNoteState(type: string, note:INote): void;
-    onChangePermission(): void;
-}
-
-function Navbar({ activeNotes, onAddNote, onChangeNoteState, onChangePermission }: INavbarProperties) {
-    return <nav className='navbar'>
-        <ul className='list navbar-items'>
-            {activeNotes.map((n, i) => <li key={i}>
-                <NavbarItem index={i} note={n} onChangeNoteState={onChangeNoteState}/>
-            </li>)}
-        </ul>
-        <button className='navbar note__add' onClick={onAddNote}>+</button>
-    </nav>
-}
-
-export default Navbar;
