@@ -1,8 +1,14 @@
 import React from 'react';
+import Navbar from './Components/Navbar';
 
-export default class App extends React.PureComponent {
-    render () {
-        return <div className='nexus'>
+const App = () => {
+
+    
+    return <div className='nexus'>
+        <div className='navbar-container'>
+            <Navbar activeNotes={[{}, {}, {}]}/>
         </div>
-    }
+    </div>
 }
+
+export default App;
